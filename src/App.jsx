@@ -1,13 +1,16 @@
 // import { useState } from 'react'
-import './App.css'
+import "./css/App.css";
+import Navbar from "./components/Navbar";
+import ProductsContainer from "./components/ProductsContainer";
 
 function App() {
-
   return (
     <>
-     <h1>Hello World</h1>
+      <Navbar/>
+      <h1 className="mt-5">Tienda Kinetix Sports</h1>
+      <ProductsContainer title="Listado de productos" />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
