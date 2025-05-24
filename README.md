@@ -1,4 +1,4 @@
-<h1>sport-store.github.io</h1>
+<h1>Kinetix Sports (React)</h1>
 Ejemplo página de e-commerce creada con React
 Esta es una página de fantasía creada sin fines de lucro.
 
