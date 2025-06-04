@@ -7,8 +7,7 @@ function App() {
   return (
     <>
       <Navbar/>
-      <h1 className="mt-5">Tienda Kinetix Sports</h1>
-      <ProductsContainer title="Listado de productos" />
+      <ProductsContainer className="mt-5" title="Listado de productos" />
     </>
   );
 }

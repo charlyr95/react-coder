@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Examples and test directories
+*/examples*
+*/__tests__*
+*/tests*
+*/mock*
