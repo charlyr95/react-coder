@@ -1,6 +1,6 @@
 const ProductsContainer = ({ title }) => {
   return (
-    <div className="products-container">
+    <div className="products-container mt-5">
       <h2>{title}</h2>
       <ul>
         <li>Producto 1</li>

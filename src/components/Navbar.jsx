@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
 
 const Navbar = () => {
@@ -8,9 +9,9 @@ const Navbar = () => {
       aria-label="Menú principal"
     >
       <div className="container-fluid align-items-center">
-        <a className="navbar-brand mx-md-5 mx-2 text-shadow-sm" href="#">
+        <Link className="navbar-brand mx-md-5 mx-2 text-shadow-sm" to="/">
           Kineti<span className="text-warning">X Sports</span>
-        </a>
+        </Link>
         <div className="order-lg-last d-flex gap-2 flex-nowrap ms-lg-3">
           <button
             className="btn btn-outline-light"
@@ -19,9 +20,9 @@ const Navbar = () => {
           >
             <i className="bi bi-person"></i>
           </button>
-          <a href="#">
-            <CartWidget></CartWidget>
-          </a>
+          <Link to="/cart">
+            <CartWidget />
+          </Link>
           <button
             className="btn btn-outline-light d-lg-none"
             type="button"
@@ -41,78 +42,78 @@ const Navbar = () => {
         >
           <ul className="navbar-nav ms-xl-auto me-auto me-xl-auto mb-2 mb-lg-0 d-flex gap-xl-4">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <Link className="nav-link active" aria-current="page" to="/">
                 Inicio
-              </a>
+              </Link>
             </li>
             <li className="nav-item dropdown" data-bs-theme="dark">
-              <a
+              <Link
                 className="nav-link dropdown-toggle"
-                href="#"
+                to="/tienda"
                 role="button"
                 id="dropdownTienda"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Tienda
-              </a>
+              </Link>
               <ul
                 className="dropdown-menu"
                 aria-labelledby="dropdownTienda"
                 role="menu"
               >
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" to="/explorar">
                     Explorar
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" to="/hombre">
                     Hombre
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" to="/mujer">
                     Mujer
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" to="/nino">
                     Niño
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" to="/disciplinas">
                     Disciplinas
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" to="/marcas">
                     Marcas
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/comunidad">
                 Comunidad
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/nosotros">
                 Nosotros
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/contacto">
                 Contacto
-              </a>
+              </Link>
             </li>
             <div
               className="d-lg-none position-absolute w-100 start-0 bg-transparent"
