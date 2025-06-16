@@ -11,7 +11,7 @@ const ItemListContainer = (props) => {
   const [data, setData] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
-  const { categoryId } = useParams()
+  const { category } = useParams()
   const { gender } = useParams()
 
   const fetchProducts = () => {
@@ -20,10 +20,10 @@ const ItemListContainer = (props) => {
 
     getProducts()
       .then((respuesta) => {
-        if(categoryId){
-          setData(respuesta.filter((prod)=> prod.category === categoryId))
-        } else if(gender){
-          setData(respuesta.filter((prod)=> prod.gender === gender))
+        if (category) {
+          setData(respuesta.filter((prod) => prod.category === category))
+        } else if (gender) {
+          setData(respuesta.filter((prod) => prod.gender === gender))
         } else {
           setData(respuesta)
         }
@@ -38,7 +38,7 @@ const ItemListContainer = (props) => {
 
   useEffect(() => {
     fetchProducts()
-  }, [categoryId, gender])
+  }, [category, gender])
 
   return (
     <div>

@@ -20,9 +20,9 @@ function App() {
       <Routes>
         <Route path='/' element={<ItemListContainer titulo='Todos los productos' />} />
         <Route path='/tienda' element={<ItemListContainer titulo='Todos los productos' />} />
-        <Route path='/category/:categoryId' element={<ItemListContainer titulo='Productos por categoría' />} />
+        <Route path='/category/:category' element={<ItemListContainer titulo='Productos por categoría' />} />
         <Route path='/gender/:gender' element={<ItemListContainer titulo='Productos por género' />} />
-        <Route path='/product/:id' element={<ItemDetailContainer />} />
+        <Route path='/product/:product_id' element={<ItemDetailContainer />} />
         <Route path='*' element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>

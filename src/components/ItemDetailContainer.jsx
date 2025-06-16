@@ -9,13 +9,13 @@ const ItemDetailContainer = () => {
   const [product, setProduct] = useState({})
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
-  const { id } = useParams()
+  const { product_id } = useParams()
 
   const fetchProduct = () => {
     setIsLoading(true)
     setError(null)
 
-    getOneProduct(id)
+    getOneProduct(product_id)
       .then((res) => setProduct(res))
       .catch(() => setError("No se pudo cargar el producto."))
       .finally(() => setIsLoading(false))
@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     fetchProduct()
-  }, [id])
+  }, [product_id])
 
   return (
     <>
