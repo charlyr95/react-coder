@@ -63,7 +63,7 @@ const Navbar = () => {
                 role="menu"
               >
                 <li>
-                  <Link className="dropdown-item" to="/explorar">
+                  <Link className="dropdown-item" to="/tienda">
                     Explorar
                   </Link>
                 </li>
@@ -71,17 +71,17 @@ const Navbar = () => {
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/hombre">
+                  <Link className="dropdown-item" to="/gender/male">
                     Hombre
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/mujer">
+                  <Link className="dropdown-item" to="/gender/female">
                     Mujer
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/nino">
+                  <Link className="dropdown-item" to="/gender/child">
                     Niño
                   </Link>
                 </li>
@@ -89,13 +89,13 @@ const Navbar = () => {
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/disciplinas">
-                    Disciplinas
+                  <Link className="dropdown-item" to="/category/calzado">
+                    Calzado
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/marcas">
-                    Marcas
+                  <Link className="dropdown-item" to="/category/indumentaria">
+                    Indumentaria
                   </Link>
                 </li>
               </ul>

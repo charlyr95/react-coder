@@ -42,8 +42,10 @@ return (
     <BrowserRouter>
     <Navbar/>
     <Routes>
-      <Route path='/' element={ <ItemListContainer saludo='Bienvenidos a mi app'/>}/>
-      <Route path='/category/:categoryId' element={ <ItemListContainer saludo='Estas en la categoria:'/>}/>
+      <Route path='/' element={ <ItemListContainer titulo='Todos los productos'/>}/>
+      <Route path='/tienda' element={ <ItemListContainer titulo='Todos los productos'/>}/>
+      <Route path='/category/:categoryId' element={ <ItemListContainer titulo='Category'/>}/>
+      <Route path='/gender/:gender' element={ <ItemListContainer titulo='Gender'/>}/>
       <Route path='/product/:id' element={<ItemDetailContainer/>}/>
       <Route path='*' element={<ErrorPage/>}/>
     </Routes>

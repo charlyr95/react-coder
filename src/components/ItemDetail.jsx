@@ -4,7 +4,7 @@ import ItemCount from './ItemCount';
 const ItemDetail = ({ product }) => {
   // Desestructuración del objeto product
   const {
-    title= "",
+    title = "",
     vendor = "",
     description = "",
     price = 0,
@@ -15,8 +15,8 @@ const ItemDetail = ({ product }) => {
     quantity_in_stock = 0,
   } = product;
 
-  const onAdd = (cantidad)=>{
-    alert(`Agregaste ${cantidad} de items`)
+  const onAdd = (cantidad) => {
+    alert(`Agregaste al carrito:\n${title}\n${cantidad > 1 ? `${cantidad} unidades` : `${cantidad} unidad`}`);
   }
 
   return (
@@ -65,8 +65,7 @@ const ItemDetail = ({ product }) => {
           </div>
           <p className="d-none">{description || ""}</p>
 
-          <ItemCount stock={quantity_in_stock} onAdd={onAdd}/>
-          
+          <ItemCount stock={quantity_in_stock} onAdd={onAdd} />
 
           <div className="card" style={{ fontSize: "0.8em" }}>
             <ul className="list-unstyled p-3">
