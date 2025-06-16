@@ -12,10 +12,10 @@ Entrega 1:
 
 Entrega 2:
   - Se agregan componentes:
-      - Funcionalidades Generales: ErrorMessage, ErrorPage, Loading-
-      - Carta del producto: [text](src/components/Item.jsx)
-      - Detalle del producto: [text](src/components/ItemDetail.jsx)
-      - Contenedor del detalle: [text](src/components/ItemDetailContainer.jsx)
-      - Fetch de productos: [text](src/mock/AyncMock.jsx)
+      - Funcionalidades Generales: [ErrorMessage](src/components/ErrorMessage.jsx), [ErrorPage](src/components/ErrorPage.jsx), [Loading](src/components/Loading.tsx)
+      - Carta del producto: [Item](src/components/Item.jsx)
+      - Detalle del producto: [ItemDetail](src/components/ItemDetail.jsx)
+      - Contenedor del detalle: [ItemDetailContainer](src/components/ItemDetailContainer.jsx)
+      - Fetch de productos: [AyncMock](src/mock/AyncMock.jsx)
   - Implementación de React Routes
   - Implementación de useParams
