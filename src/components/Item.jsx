@@ -66,7 +66,7 @@ const Item = ({ prod }) => {
                         <div className="buy-button bg-body-tertiary top-0 z-2">
                             <div className="p-4 pt-1 z-2">
                                 <Link
-                                    to={`./product/${product_id}`}
+                                    to={`/product/${product_id}`}
                                     className="btn btn-warning w-100 z-5"
                                     role="button"
                                 >
