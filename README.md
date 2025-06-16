@@ -17,5 +17,5 @@ Entrega 2:
       - Detalle del producto: [ItemDetail](src/components/ItemDetail.jsx)
       - Contenedor del detalle: [ItemDetailContainer](src/components/ItemDetailContainer.jsx)
       - Fetch de productos: [AyncMock](src/mock/AyncMock.jsx)
-  - Implementación de React Routes
-  - Implementación de useParams
+  - Implementación de React Routes.
+  - Implementación de useParams.
