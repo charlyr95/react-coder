@@ -8,4 +8,14 @@ Entrega 1:
   - Configuración inicial con Vite
   - Se limpia template de Vite
   - Se incluye CSS personalizado y Bootstrap
-  - Se agrega un componente Navbar, CartWidget y ProductsContainer
+  - Se agrega un componente Navbar, CartWidget y ItemListContainer
+
+Entrega 2:
+  - Se agregan componentes:
+      - Funcionalidades Generales: ErrorMessage, ErrorPage, Loading-
+      - Carta del producto: [text](src/components/Item.jsx)
+      - Detalle del producto: [text](src/components/ItemDetail.jsx)
+      - Contenedor del detalle: [text](src/components/ItemDetailContainer.jsx)
+      - Fetch de productos: [text](src/mock/AyncMock.jsx)
+  - Implementación de React Routes
+  - Implementación de useParams
