@@ -1,17 +1,24 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from "./CartWidget";
 
-const Navbar = () => {
+const NavigationBar = () => {
   return (
-    <nav
-      className="navbar navbar-expand-lg navbar-dark fixed-top bg-dark border-bottom border-secondary border-opacity-50"
+    <Navbar
+      bg="dark"
+      variant="dark"
+      expand="lg"
+      fixed="top"
+      className="border-bottom border-secondary border-opacity-50"
       role="navigation"
       aria-label="Menú principal"
     >
       <div className="container-fluid align-items-center">
-        <Link className="navbar-brand mx-md-5 mx-2 text-shadow-sm" to="/">
+        <Navbar.Brand as={Link} to="/" className="mx-md-5 mx-2 text-shadow-sm">
           Kineti<span className="text-warning">X Sports</span>
-        </Link>
+        </Navbar.Brand>
         <div className="order-lg-last d-flex gap-2 flex-nowrap ms-lg-3">
           <button
             className="btn btn-outline-light"
@@ -23,107 +30,45 @@ const Navbar = () => {
           <Link to="/cart">
             <CartWidget />
           </Link>
-          <button
-            className="btn btn-outline-light d-lg-none"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse"
-            aria-controls="navbarCollapse"
-            aria-expanded="false"
-            aria-label="Abrir menú de navegación"
-          >
-            <i className="bi bi-list"></i>
-          </button>
         </div>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarCollapse"
-          style={{ fontSize: "0.9em" }}
-        >
-          <ul className="navbar-nav ms-xl-auto me-auto me-xl-auto mb-2 mb-lg-0 d-flex gap-xl-4">
-            <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/">
-                Inicio
-              </Link>
-            </li>
-            <li className="nav-item dropdown" data-bs-theme="dark">
-              <Link
-                className="nav-link dropdown-toggle"
-                to="/tienda"
-                role="button"
-                id="dropdownTienda"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Tienda
-              </Link>
-              <ul
-                className="dropdown-menu"
-                aria-labelledby="dropdownTienda"
-                role="menu"
-              >
-                <li>
-                  <Link className="dropdown-item" to="/tienda">
-                    Explorar
-                  </Link>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/gender/male">
-                    Hombre
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/gender/female">
-                    Mujer
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/gender/child">
-                    Niño
-                  </Link>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/category/calzado">
-                    Calzado
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/category/indumentaria">
-                    Indumentaria
-                  </Link>
-                </li>
-              </ul>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/comunidad">
-                Comunidad
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/nosotros">
-                Nosotros
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/contacto">
-                Contacto
-              </Link>
-            </li>
-            <div
-              className="d-lg-none position-absolute w-100 start-0 bg-transparent"
-              style={{ top: "100%", height: "100vh" }}
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarCollapse"
-              aria-controls="navbarCollapse"
-            ></div>
-          </ul>
+        <Navbar.Toggle aria-controls="navbarCollapse" />
+        <Navbar.Collapse id="navbarCollapse" style={{ fontSize: "0.9em" }}>
+          <Nav className="ms-xl-auto me-auto me-xl-auto mb-2 mb-lg-0 d-flex gap-xl-4">
+            <Nav.Link as={NavLink} to="/" end>
+              Inicio
+            </Nav.Link>
+            <NavDropdown title="Tienda" id="dropdownTienda" menuVariant="dark">
+              <NavDropdown.Item as={Link} to="/tienda">
+                Explorar
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item as={Link} to="/gender/male">
+                Hombre
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/gender/female">
+                Mujer
+              </NavDropdown.Item>
+              {/* <NavDropdown.Item as={Link} to="/gender/child">
+                Niño
+              </NavDropdown.Item> */}
+              <NavDropdown.Divider />
+              <NavDropdown.Item as={Link} to="/category/calzado">
+                Calzado
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/category/indumentaria">
+                Indumentaria
+              </NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link as={Link} to="/comunidad">
+              Comunidad
+            </Nav.Link>
+            <Nav.Link as={Link} to="/nosotros">
+              Nosotros
+            </Nav.Link>
+            <Nav.Link as={Link} to="/contacto">
+              Contacto
+            </Nav.Link>
+          </Nav>
           <form className="d-flex" role="search">
             <input
               className="form-control me-2"
@@ -135,10 +80,10 @@ const Navbar = () => {
               Buscar
             </button>
           </form>
-        </div>
+        </Navbar.Collapse>
       </div>
-    </nav>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default NavigationBar;
