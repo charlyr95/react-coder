@@ -12,7 +12,7 @@ const NavigationBar = () => {
       variant="dark"
       expand="lg"
       fixed="top"
-      className="d-flex flex-nowrap justify-content-between border-bottom border-secondary border-opacity-50"
+      className="d-flex justify-content-between border-bottom border-secondary border-opacity-50"
       role="navigation"
       aria-label="Menú principal"
       style={{ fontSize: "0.9em" }}
