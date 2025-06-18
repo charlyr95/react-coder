@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import CartWidget from "./CartWidget";
 
 const NavigationBar = () => {
@@ -11,9 +11,10 @@ const NavigationBar = () => {
       variant="dark"
       expand="lg"
       fixed="top"
-      className="border-bottom border-secondary border-opacity-50"
+      className="d-flex justify-content-between border-bottom border-secondary border-opacity-50"
       role="navigation"
       aria-label="Menú principal"
+      style={{ fontSize: "0.9em" }}
     >
       <div className="container-fluid align-items-center">
         <Navbar.Brand as={Link} to="/" className="mx-md-5 mx-2 text-shadow-sm">
@@ -30,9 +31,19 @@ const NavigationBar = () => {
           <Link to="/cart">
             <CartWidget />
           </Link>
+          <button
+            className="btn btn-outline-light d-lg-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Abrir menú de navegación"
+          >
+            <i className="bi bi-list"></i>
+          </button>
         </div>
-        <Navbar.Toggle aria-controls="navbarCollapse" />
-        <Navbar.Collapse id="navbarCollapse" style={{ fontSize: "0.9em" }}>
+        <Navbar.Collapse id="navbarCollapse">
           <Nav className="ms-xl-auto me-auto me-xl-auto mb-2 mb-lg-0 d-flex gap-xl-4">
             <Nav.Link as={NavLink} to="/" end>
               Inicio
@@ -68,6 +79,13 @@ const NavigationBar = () => {
             <Nav.Link as={Link} to="/contacto">
               Contacto
             </Nav.Link>
+            <div
+              className="d-lg-none position-absolute w-100 start-0 bg-transparent vh-100 m-0 p-0 top-100"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarCollapse"
+              aria-controls="navbarCollapse"
+              aria-expanded="true"
+            ></div>
           </Nav>
           <form className="d-flex" role="search">
             <input
