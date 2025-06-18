@@ -2,7 +2,9 @@ import React from "react";
 import CartItem from "./CartItem";
 import { Link } from "react-router-dom";
 
-const CartItemContainer = ({ cartItems, onRemoveItem }) => {
+const CartItemContainer = () => {
+
+  // TODO: Quitar datos de ejemplo
   const prod1 = {
     product_id: "a0fb097ccc",
     vendor: "Nike",
