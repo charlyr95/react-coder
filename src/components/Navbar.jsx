@@ -1,9 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import CartWidget from "./CartWidget";
-import { Button } from "react-bootstrap";
 
 const NavigationBar = () => {
   return (
@@ -32,11 +31,19 @@ const NavigationBar = () => {
           <Link to="/cart">
             <CartWidget />
           </Link>
-          <button class="btn btn-outline-light d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Abrir menú de navegación">
-            <i class="bi bi-list"></i>
+          <button
+            className="btn btn-outline-light d-lg-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Abrir menú de navegación"
+          >
+            <i className="bi bi-list"></i>
           </button>
         </div>
-        <Navbar.Collapse id="navbarCollapse" >
+        <Navbar.Collapse id="navbarCollapse">
           <Nav className="ms-xl-auto me-auto me-xl-auto mb-2 mb-lg-0 d-flex gap-xl-4">
             <Nav.Link as={NavLink} to="/" end>
               Inicio
@@ -72,7 +79,13 @@ const NavigationBar = () => {
             <Nav.Link as={Link} to="/contacto">
               Contacto
             </Nav.Link>
-            <div className="d-lg-none position-absolute w-100 start-0 bg-transparent vh-100 m-0 p-0 top-100" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true"></div>
+            <div
+              className="d-lg-none position-absolute w-100 start-0 bg-transparent vh-100 m-0 p-0 top-100"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarCollapse"
+              aria-controls="navbarCollapse"
+              aria-expanded="true"
+            ></div>
           </Nav>
           <form className="d-flex" role="search">
             <input
@@ -85,7 +98,6 @@ const NavigationBar = () => {
               Buscar
             </button>
           </form>
-          
         </Navbar.Collapse>
       </div>
     </Navbar>
@@ -93,4 +105,3 @@ const NavigationBar = () => {
 };
 
 export default NavigationBar;
-
