@@ -32,8 +32,8 @@ const NavigationBar = () => {
           <Link to="/cart">
             <CartWidget />
           </Link>
-          <button class="btn btn-outline-light d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Abrir menú de navegación">
-            <i class="bi bi-list"></i>
+          <button className="btn btn-outline-light d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Abrir menú de navegación">
+            <i className="bi bi-list"></i>
           </button>
         </div>
         <Navbar.Collapse id="navbarCollapse" >
