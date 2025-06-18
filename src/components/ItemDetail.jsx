@@ -1,5 +1,7 @@
 import React from 'react'
 import ItemCount from './ItemCount';
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
 
 const ItemDetail = ({ product }) => {
   // Desestructuración del objeto product
@@ -15,8 +17,12 @@ const ItemDetail = ({ product }) => {
     quantity_in_stock = 0,
   } = product;
 
+  const { cart, addToCart } = useContext(CartContext);
+
   const onAdd = (cantidad) => {
-    alert(`Agregaste al carrito:\n${title}\n${cantidad > 1 ? `${cantidad} unidades` : `${cantidad} unidad`}`);
+    addToCart(product, cantidad);
+    console.log(cart);
+    // alert(`Agregaste al carrito:\n${title}\n${cantidad > 1 ? `${cantidad} unidades` : `${cantidad} unidad`}`);
   }
 
   return (
