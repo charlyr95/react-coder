@@ -9,7 +9,7 @@ const ItemCount = ({ stock, onAdd }) => {
     return (
         <div className="d-flex flex-column gap-3 p-3 border rounded">
             <div className="d-flex flex-wrap justify-content-center align-items-center gap-3">
-                <h5 className="text-center m-0 p-0">Cantidad</h5>
+                <h5 className="text-center m-0 p-0 fs-6">Cantidad</h5>
                 <div className="btn-group d-flex justify-content-center align-items-center">
                 <button
                     className="btn btn-outline-secondary py-1"
