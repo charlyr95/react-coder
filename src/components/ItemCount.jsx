@@ -8,22 +8,22 @@ const ItemCount = ({ stock, onAdd }) => {
 
     return (
         <div className="d-flex flex-column gap-3 p-3 border rounded">
-            <div className="d-flex justify-content-center align-items-center gap-3">
+            <div className="d-flex flex-wrap justify-content-center align-items-center gap-3">
                 <h5 className="text-center m-0 p-0">Cantidad</h5>
                 <div className="btn-group d-flex justify-content-center align-items-center">
                 <button
-                    className="btn btn-outline-secondary px-3 py-2 fs-5"
+                    className="btn btn-outline-secondary py-1"
                     onClick={decrementar}
                 >
                     <i className="bi bi-dash"></i>
                 </button>
 
-                <div className="px-4 py-2 border border-secondary border-end-0 border-start-0 bg-white fs-5 text-center" style={{ minWidth: '60px' }}>
+                <div className="px-4 py-1 border border-secondary border-end-0 border-start-0 bg-white text-center" style={{ minWidth: '60px' }}>
                     {count}
                 </div>
 
                 <button
-                    className="btn btn-outline-secondary px-3 py-2 fs-5"
+                    className="btn btn-outline-secondary py-1"
                     onClick={incrementar}
                 >
                     <i className="bi bi-plus"></i>
