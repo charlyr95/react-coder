@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Swal from 'sweetalert2'
+import { notifySuccess } from '../utils/toastDialog'
 
 const ItemCount = ({ stock, onAdd }) => {
     const [count, setCount] = useState(1)
@@ -14,15 +14,7 @@ const ItemCount = ({ stock, onAdd }) => {
     const addToCart = () => {
         setIsBouncing(true)
         onAdd(count)
-        Swal.fire({
-            icon: 'success',
-            title: '¡Agregado!',
-            text: `Agregaste ${count} producto${count > 1 ? 's' : ''} al carrito`,
-            showConfirmButton: false,
-            timer: 1200,
-            timerProgressBar: true
-        })
-        setTimeout(() => setIsBouncing(false), 400)
+        notifySuccess(`Agregaste ${count} producto${count > 1 ? 's' : ''} al carrito`, "bottom-right", 1000, true )
         setAdded(true)
     }
 
@@ -62,10 +54,10 @@ const ItemCount = ({ stock, onAdd }) => {
                 </button>
             ) : (
                 <div className="d-flex gap-2">
-                    <Link className="flex-fill btn btn-warning" to="/tienda" onClick={() => setAdded(false)}>
+                    <Link className="flex-fill btn btn-warning" to="/tienda">
                         Seguir comprando
                     </Link>
-                    <Link className="flex-fill btn btn-outline-warning text-dark" to="/cart" onClick={() => setAdded(false)}>
+                    <Link className="flex-fill btn btn-outline-warning text-dark" to="/cart">
                         Ir al carrito
                     </Link>
                 </div>
