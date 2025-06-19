@@ -7,13 +7,13 @@ import { confirmDialog } from "../../utils/confirmDialog";
 
 const CartItemContainer = () => {
 
-  const { cart = [], cartCount = 0, removeFromCart = () => {} } = useContext(CartContext);
+  const { cart = [], cartCount = 0, removeFromCart = () => {}, clearCart = () => {}} = useContext(CartContext);
 
   const confirmClearCart = () => {
     confirmDialog("¿Quieres vaciar el carrito?", "Eliminarás todos los productos del carrito", "Vaciar")
       .then((result) => {
         if (result) {
-          // Lógica para vaciar el carrito
+          clearCart();
         }
       });
   }
