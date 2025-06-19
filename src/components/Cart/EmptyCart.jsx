@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const EmptyCart = () => {
   return (
-    <div className="card border-0 shadow-sm">
+    <div className="card border-0">
         <div className="card-body cart-empty d-flex flex-column justify-content-center align-items-center text-center p-5">
         <i className="bi bi-cart-x cart-empty-icon mb-4"></i>
         <h3>Tu carrito está vacío</h3>
