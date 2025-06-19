@@ -52,7 +52,6 @@ const ItemCount = ({ stock, onAdd }) => {
 
                 <small className="m-0 p-0 text-muted text-center">{stock === 0 ? "Sin stock" : `${stock} disponibles`}</small>
             </div>
-
             {!added ? (
                 <button
                     className={`btn btn-warning py-2${isBouncing ? ' animate__animated animate__bounce' : ''}`}
@@ -63,10 +62,10 @@ const ItemCount = ({ stock, onAdd }) => {
                 </button>
             ) : (
                 <div className="d-flex gap-2">
-                    <Link className="btn btn-outline-primary flex-fill" to="/tienda" onClick={() => setAdded(false)}>
+                    <Link className="flex-fill btn btn-warning" to="/tienda" onClick={() => setAdded(false)}>
                         Seguir comprando
                     </Link>
-                    <Link className="btn btn-success flex-fill" to="/cart" onClick={() => setAdded(false)}>
+                    <Link className="flex-fill btn btn-outline-warning text-dark" to="/cart" onClick={() => setAdded(false)}>
                         Ir al carrito
                     </Link>
                 </div>
