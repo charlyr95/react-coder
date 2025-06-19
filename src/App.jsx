@@ -1,14 +1,25 @@
-import React from 'react';
-import './css/App.css'
+// library imports
+import React, { useContext } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify'
+
+// css
+import 'react-toastify/dist/ReactToastify.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/App.css'
+
+// components
+import NavigationBar from './components/Navbar';
 import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ErrorPage from './components/ErrorPage';
-import NavigationBar from './components/Navbar';
-import Cart from './pages/Cart';
-import { useContext } from 'react';
+
+// context
 import { CartProvider } from './context/CartContext';
+
+// pages
+import Cart from './pages/Cart';
+
 
 function App() {
   return (
@@ -25,6 +36,7 @@ function App() {
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       </CartProvider>
+      <ToastContainer />
     </BrowserRouter>
   )
 }

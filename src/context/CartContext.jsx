@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import { notifySuccess } from "../utils/toastDialog";
 
 // Contexto para el carrito de compras
 export const CartContext = createContext();
@@ -23,10 +24,14 @@ export const CartProvider = ({ children }) => {
     // Remover un producto del carrito
     const removeFromCart = (product_id) => {
         setCart((prevCart) => prevCart.filter((prod) => prod.product_id !== product_id));
+        notifySuccess("Producto eliminado del carrito", "bottom-right", 1000, true);
     };
 
     // Vaciar el carrito
-    const clearCart = () => setCart([]);
+    const clearCart = () => {
+        setCart([]);
+        notifySuccess("Carrito vaciado correctamente", "bottom-right", 1000, true);
+    };
 
     // Cantidad total de productos
     const cartCount = cart.reduce((acc, prod) => acc + prod.quantity, 0);

@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 const CartSummary = () => {
+  const {
+    cartCount = 0,
+    cartTotal = 0
+  } = useContext(CartContext);
 
   return (
     // Resumen de compra
@@ -12,9 +17,9 @@ const CartSummary = () => {
         <div className="card-body">
           <div className="d-flex justify-content-between mb-2">
             <span>
-              Subtotal (<span id="cartProductsCount">0</span> productos)
+              Subtotal (<span id="cartProductsCount">{cartCount}</span> productos)
             </span>
-            <span id="cartSubtotal">$0,00</span>
+            <span id="cartSubtotal">${cartTotal.toLocaleString("es-AR")}</span>
           </div>
           <div className="d-flex justify-content-between mb-2">
             <span>Envío</span>
@@ -26,11 +31,11 @@ const CartSummary = () => {
           </div>
           <div className="d-flex justify-content-between mb-3 fw-bold">
             <span>Total</span>
-            <span>$0,00</span>
+            <span>${cartTotal.toLocaleString("es-AR")}</span>
           </div>
           <div className="d-flex justify-content-between mb-3 text-success fw-bold">
             <span>Total con transferencia</span>
-            <span>$0,00</span>
+            <span>${(Math.round(cartTotal * 0.0085) * 100).toLocaleString("es-AR")}</span>
           </div>
 
           {/* <!-- Cupón de descuento --> */}
