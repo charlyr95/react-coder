@@ -12,6 +12,7 @@ import './css/App.css'
 import NavigationBar from './components/Navbar';
 import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer';
+import EnConstruccion from './components/EnConstruccion';
 import ErrorPage from './components/ErrorPage';
 
 // context
@@ -33,6 +34,10 @@ function App() {
           <Route path='/gender/:gender' element={<ItemListContainer titulo='Productos por género' />} />
           <Route path='/product/:product_id' element={<ItemDetailContainer />} />
           <Route path='/cart' element={<Cart />} />
+          {/* TODO: 1.1 Crear páginas para las otras secciones o modificar header */}
+          <Route path='/comunidad' element={<EnConstruccion />} />
+          <Route path='/nosotros' element={<EnConstruccion />} />
+          <Route path='/contacto' element={<EnConstruccion />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       </CartProvider>

@@ -84,12 +84,14 @@ const CartSummary = () => {
             </div>
           </div>
 
+          {/* TODO: IMPORTANTE: Implementar checkout con escritura a firebase */}
           <button className="btn btn-warning w-100 py-2 mb-2">
             Finalizar compra
           </button>
           <div className="text-center">
             <small className="text-muted">
               Al finalizar aceptas nuestros{" "}
+              {/* TODO: Quitar link si no funciona */}
               <a href="#" className="text-decoration-none">
                 términos y condiciones
               </a>

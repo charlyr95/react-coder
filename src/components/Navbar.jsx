@@ -21,6 +21,7 @@ const NavigationBar = () => {
           Kineti<span className="text-warning">X Sports</span>
         </Navbar.Brand>
         <div className="order-lg-last d-flex gap-2 flex-nowrap ms-lg-3">
+          {/* TODO: 3.2 Eliminar botón de login o implementar login con firebase */}
           <button
             className="btn btn-outline-light"
             type="button"
@@ -87,6 +88,7 @@ const NavigationBar = () => {
               aria-expanded="true"
             ></div>
           </Nav>
+          {/* TODO: 3.1 Revisar implementación de búsqueda, recarga aplicación. Corregir o eliminar */}
           <form className="d-flex" role="search">
             <input
               className="form-control me-2"

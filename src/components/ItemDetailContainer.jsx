@@ -11,6 +11,7 @@ const ItemDetailContainer = () => {
   const [error, setError] = useState(null)
   const { product_id } = useParams()
 
+  // TODO: IMPORTANTE: Cambiar fetch por el de firebase
   const fetchProduct = () => {
     setIsLoading(true)
     setError(null)
