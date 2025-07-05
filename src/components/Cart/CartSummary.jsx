@@ -10,7 +10,7 @@ const CartSummary = () => {
   return (
     // Resumen de compra
     <div className="col-12 col-lg-4">
-      <div className="card border-0 shadow-sm cart-summary">
+      <div className="card border-0 shadow cart-summary">
         <div className="card-header bg-body">
           <h5 className="mb-0 text-body">Resumen de compra</h5>
         </div>
@@ -48,37 +48,39 @@ const CartSummary = () => {
 
           {/* <!-- Métodos de pago --> */}
           {/* TODO: Corregir método active */}
-          <h6 className="mb-3 d-none">Métodos de pago</h6>
-          <div className="row row-cols-2 g-2 mb-4">
-            <div className="col">
-              <div className="card payment-method-card h-100">
-                <div className="card-body p-2 text-center">
-                  <i className="bi bi-bank fs-3"></i>
-                  <p className="mb-0 small">Transferencia</p>
+          <div className="d-none">
+            <h6 className="mb-3">Métodos de pago</h6>
+            <div className="row row-cols-2 g-2 mb-4">
+              <div className="col">
+                <div className="card payment-method-card h-100">
+                  <div className="card-body p-2 text-center">
+                    <i className="bi bi-bank fs-3"></i>
+                    <p className="mb-0 small">Transferencia</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col">
-              <div className="card payment-method-card h-100">
-                <div className="card-body p-2 text-center">
-                  <i className="bi bi-credit-card fs-3"></i>
-                  <p className="mb-0 small">Tarjeta</p>
+              <div className="col">
+                <div className="card payment-method-card h-100">
+                  <div className="card-body p-2 text-center">
+                    <i className="bi bi-credit-card fs-3"></i>
+                    <p className="mb-0 small">Tarjeta</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col">
-              <div className="card payment-method-card h-100">
-                <div className="card-body p-2 text-center">
-                  <i className="bi bi-cash-stack fs-3"></i>
-                  <p className="mb-0 small">Efectivo</p>
+              <div className="col">
+                <div className="card payment-method-card h-100">
+                  <div className="card-body p-2 text-center">
+                    <i className="bi bi-cash-stack fs-3"></i>
+                    <p className="mb-0 small">Efectivo</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col">
-              <div className="card payment-method-card h-100">
-                <div className="card-body p-2 text-center">
-                  <i className="bi bi-wallet2 fs-3"></i>
-                  <p className="mb-0 small">Billetera</p>
+              <div className="col">
+                <div className="card payment-method-card h-100">
+                  <div className="card-body p-2 text-center">
+                    <i className="bi bi-wallet2 fs-3"></i>
+                    <p className="mb-0 small">Billetera</p>
+                  </div>
                 </div>
               </div>
             </div>

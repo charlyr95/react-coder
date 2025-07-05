@@ -8,7 +8,7 @@ const ItemCount = ({ stock, onAdd }) => {
 
     return (
         <div className="d-flex flex-column gap-3 p-3 border rounded">
-            <div className="d-flex justify-content-center align-items-center gap-3">
+            <div className="d-flex justify-content-center align-items-center gap-3 flex-wrap">
                 <h5 className="text-center m-0 p-0">Cantidad</h5>
                 <div className="btn-group d-flex justify-content-center align-items-center">
                 <button

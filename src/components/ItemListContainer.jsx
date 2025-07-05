@@ -14,20 +14,13 @@ const ItemListContainer = (props) => {
   const { category } = useParams()
   const { gender } = useParams()
 
-  const fetchProducts = async () => {
+  const fetchProducts = async (filters) => {
     setIsLoading(true)
     setError(null)
 
-    await getProducts()
+    await getProducts(filters)
       .then((respuesta) => {
         setData(respuesta)
-        // if (category) {
-        //   setData(respuesta.filter((prod) => prod.category === category))
-        // } else if (gender) {
-        //   setData(respuesta.filter((prod) => prod.gender === gender))
-        // } else {
-        //   setData(respuesta)
-        // }
       })
       .catch(() => {
         setError("Hubo un problema al cargar los productos.")
@@ -38,7 +31,10 @@ const ItemListContainer = (props) => {
   }
 
   useEffect(() => {
-    fetchProducts()
+    const filters = []
+    if (category) { filters.push({ field: "category", value: category }) }
+    if (gender) { filters.push({ field: "gender", value: gender }) }
+    fetchProducts( filters)
   }, [category, gender])
 
   return (
