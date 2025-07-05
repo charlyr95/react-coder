@@ -1,8 +1,8 @@
 
 
 import { initializeApp } from "firebase/app";
-import { collection, doc, addDoc, getDoc } from "firebase/firestore";
-import { db } from "./service/firebase.jsx";
+import { collection, doc, addDoc, getDoc, getFirestore } from "firebase/firestore";
+import { getDocs, query, where } from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -15,7 +15,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const db = app.firestore();
+const db = getFirestore(app);
 
 const getProduct = async (productId) => {
     const productRef = doc(db, "products", productId);
@@ -38,6 +38,17 @@ const createOrder = async (orderData) => {
     }
     catch (error) {
         console.error("Error creating order: ", error);
+        throw error;
+    }
+};
+
+const createProduct = async (productData) => {
+    try {
+        const productsCollection = collection(db, "products");
+        const productDoc = await addDoc(productsCollection, productData);
+        console.log("Product created with ID: ", productDoc.id);
+        return productDoc.id;
+    } catch (error) {
         throw error;
     }
 };
@@ -73,6 +84,5 @@ const getProducts = async () => {
     });
     return products;
 };
-    
 
-export { db, app, getProduct, createOrder, getCategoryProducts, getGenderProducts, getProducts };
+export { app, getProduct, createOrder, getCategoryProducts, getGenderProducts, getProducts, createProduct, db };

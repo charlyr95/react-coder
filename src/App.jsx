@@ -16,6 +16,7 @@ import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer';
 import EnConstruccion from './components/EnConstruccion';
 import ErrorPage from './components/ErrorPage';
+import ImportProducts from './components/ImportProducts';
 
 // context
 import { CartProvider } from './context/CartContext';
@@ -39,7 +40,7 @@ function App() {
           {/* TODO: 1.1 Crear páginas para las otras secciones o modificar header */}
           <Route path='/comunidad' element={<EnConstruccion />} />
           <Route path='/nosotros' element={<EnConstruccion />} />
-          <Route path='/contacto' element={<EnConstruccion />} />
+          <Route path='/contacto' element={<ImportProducts />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       </CartProvider>
