@@ -27,3 +27,6 @@ dist-ssr
 */examples*
 */__tests__*
 */tests*
+
+# Debug tools
+*/ImportProducts.jsx*

@@ -35,12 +35,12 @@ function App() {
           <Route path='/tienda' element={<ItemListContainer titulo='Todos los productos' />} />
           <Route path='/category/:category' element={<ItemListContainer titulo='Productos por categoría' />} />
           <Route path='/gender/:gender' element={<ItemListContainer titulo='Productos por género' />} />
-          <Route path='/product/:product_id' element={<ItemDetailContainer />} />
+          <Route path='/product/:id' element={<ItemDetailContainer />} />
           <Route path='/cart' element={<Cart />} />
           {/* TODO: 1.1 Crear páginas para las otras secciones o modificar header */}
           <Route path='/comunidad' element={<EnConstruccion />} />
           <Route path='/nosotros' element={<EnConstruccion />} />
-          <Route path='/contacto' element={<ImportProducts />} />
+          <Route path='/contacto' element={<EnConstruccion />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       </CartProvider>

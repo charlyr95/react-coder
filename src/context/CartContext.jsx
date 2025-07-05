@@ -10,9 +10,9 @@ export const CartProvider = ({ children }) => {
     // Agregar un producto al carrito si no existe, o aumentar la cantidad si ya existe
     const addToCart = (item, quantity = 1) => {
         setCart((prevCart) => {
-            if (isInCart(item.product_id)) {
+            if (isInCart(item.id)) {
                 return prevCart.map((prod) =>
-                    prod.product_id === item.product_id
+                    prod.id === item.id
                         ? { ...prod, quantity: prod.quantity + quantity }
                         : prod
                 );
@@ -22,8 +22,8 @@ export const CartProvider = ({ children }) => {
     };
 
     // Remover un producto del carrito
-    const removeFromCart = (product_id) => {
-        setCart((prevCart) => prevCart.filter((prod) => prod.product_id !== product_id));
+    const removeFromCart = (id) => {
+        setCart((prevCart) => prevCart.filter((prod) => prod.id !== id));
         notifySuccess("Producto eliminado del carrito", "bottom-right", 1000, true);
     };
 
@@ -40,7 +40,7 @@ export const CartProvider = ({ children }) => {
     const cartTotal = cart.reduce((acc, prod) => acc + prod.price * prod.quantity, 0);
 
     // Verificar si existe un producto en el carrito
-    const isInCart = (product_id) => cart.some((prod) => prod.product_id === product_id);
+    const isInCart = (id) => cart.some((prod) => prod.id === id);
 
     // Proveer el contexto
     const value = {

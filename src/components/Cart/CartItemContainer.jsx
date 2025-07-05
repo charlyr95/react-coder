@@ -7,7 +7,7 @@ import { confirmDialog } from "../../utils/confirmDialog";
 
 const CartItemContainer = () => {
 
-  const { cart = [], cartCount = 0, removeFromCart = () => {}, clearCart = () => {}} = useContext(CartContext);
+  const { cart = [], cartCount = 0, removeFromCart = () => { }, clearCart = () => { } } = useContext(CartContext);
 
   const confirmClearCart = () => {
     confirmDialog("¿Quieres vaciar el carrito?", "Eliminarás todos los productos del carrito", "Vaciar")
@@ -18,11 +18,11 @@ const CartItemContainer = () => {
       });
   }
 
-  const confirmDeleteItem = (product_id) => {
+  const confirmDeleteItem = (id) => {
     confirmDialog("¿Quieres quitar este producto?", "Puedes guardarlo para después si lo prefieres", "Eliminar")
       .then((result) => {
         if (result) {
-          removeFromCart(product_id);
+          removeFromCart(id);
         }
       });
   }
@@ -40,7 +40,7 @@ const CartItemContainer = () => {
         <div className="card-body p-0">
           <div id="product-detail" className="list-group list-group-flush">
             {cart.map((product) => (
-              <CartItem key={product.product_id} product={product} removeFromCart={confirmDeleteItem} />
+              <CartItem key={product.id} product={product} removeFromCart={confirmDeleteItem} />
             ))}
           </div>
         </div>

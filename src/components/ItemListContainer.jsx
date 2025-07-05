@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
-import { getProducts } from "../mock/AyncMock"
+// import { getProducts } from "../mock/AyncMock"
 import { useParams } from "react-router-dom"
+import { getProducts } from "../service/firebase"
 
 import ItemList from "./ItemList"
 import Loading from "./Loading"
@@ -13,19 +14,20 @@ const ItemListContainer = (props) => {
   const { category } = useParams()
   const { gender } = useParams()
 
-  const fetchProducts = () => {
+  const fetchProducts = async () => {
     setIsLoading(true)
     setError(null)
 
-    getProducts()
+    await getProducts()
       .then((respuesta) => {
-        if (category) {
-          setData(respuesta.filter((prod) => prod.category === category))
-        } else if (gender) {
-          setData(respuesta.filter((prod) => prod.gender === gender))
-        } else {
-          setData(respuesta)
-        }
+        setData(respuesta)
+        // if (category) {
+        //   setData(respuesta.filter((prod) => prod.category === category))
+        // } else if (gender) {
+        //   setData(respuesta.filter((prod) => prod.gender === gender))
+        // } else {
+        //   setData(respuesta)
+        // }
       })
       .catch(() => {
         setError("Hubo un problema al cargar los productos.")

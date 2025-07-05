@@ -5,11 +5,11 @@ const CartItem = ({ product, removeFromCart }) => {
   // destructuring product properties and providing default values
   // to avoid errors if any property is missing
   const {
+    id = "",
     title = "",
     vendor = "",
     price = 0,
     main_image = "",
-    product_id = "",
     quantity = 0,
   } = product;
 
@@ -29,7 +29,7 @@ const CartItem = ({ product, removeFromCart }) => {
           <div className="d-flex flex-column">
             <span className="text-muted small">{vendor}</span>
               <h6>
-            <Link to={`/product/${product_id}`} className="link-warning text-body link-underline-opacity-0 link-underline-opacity-100-hover">
+            <Link to={`/product/${id}`} className="link-warning text-body link-underline-opacity-0 link-underline-opacity-100-hover">
                 {title}
             </Link>
               </h6>
@@ -51,7 +51,7 @@ const CartItem = ({ product, removeFromCart }) => {
           <button
             className="remove-item__button bg-body border-0"
             data-id="${index}"
-            onClick={() => removeFromCart(product_id)}
+            onClick={() => removeFromCart(id)}
             aria-label="Eliminar producto del carrito"
             title="Eliminar producto del carrito"
           >
