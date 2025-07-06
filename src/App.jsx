@@ -16,7 +16,7 @@ import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer';
 import EnConstruccion from './components/EnConstruccion';
 import ErrorPage from './components/ErrorPage';
-import ImportProducts from './components/ImportProducts';
+import CartCheckout from './components/Cart/CartCheckout';
 
 // context
 import { CartProvider } from './context/CartContext';
@@ -41,6 +41,7 @@ function App() {
           <Route path='/comunidad' element={<EnConstruccion />} />
           <Route path='/nosotros' element={<EnConstruccion />} />
           <Route path='/contacto' element={<EnConstruccion />} />
+          <Route path='/checkout' element={<CartCheckout />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       </CartProvider>
