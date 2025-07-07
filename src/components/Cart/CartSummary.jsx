@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 
 const CartSummary = () => {
@@ -87,9 +88,10 @@ const CartSummary = () => {
           </div>
 
           {/* TODO: IMPORTANTE: Implementar checkout con escritura a firebase */}
-          <button className="btn btn-warning w-100 py-2 mb-2">
+          <Link to="/checkout" className="btn btn-warning w-100 py-2 mb-2">
             Finalizar compra
-          </button>
+          </Link>
+
           <div className="text-center">
             <small className="text-muted">
               Al finalizar aceptas nuestros{" "}

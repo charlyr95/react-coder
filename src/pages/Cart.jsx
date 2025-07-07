@@ -3,6 +3,7 @@ import CartItemContainer from "../components/Cart/CartItemContainer";
 import CartSummary from "../components/Cart/CartSummary";
 import EmptyCart from "../components/Cart/EmptyCart";
 import { CartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
 
@@ -11,7 +12,7 @@ const Cart = () => {
   return (
     <>
       <div className="mt-5">&nbsp;</div>
-      <div className="container">
+      <div className="container mb-5">
         {cart.length > 0 ? (
           <>
             <div className="row g-4">

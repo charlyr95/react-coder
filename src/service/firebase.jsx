@@ -42,6 +42,7 @@ const getOneProduct = async (productId) => {
 };
 
 const createOrder = async (orderData) => {
+    // TODO: Add datimetime from firebase server to order data ussing spread operator
     try {
         const ordersCollection = collection(db, "orders");
         const orderDoc = await addDoc(ordersCollection, orderData);
