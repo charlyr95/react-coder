@@ -89,7 +89,7 @@ const NavigationBar = () => {
             ></div>
           </Nav>
           {/* TODO: 3.1 Revisar implementación de búsqueda, recarga aplicación. Corregir o eliminar */}
-          <form className="d-flex" role="search">
+          <form className="d-flex d-none" role="search">
             <input
               className="form-control me-2"
               type="search"

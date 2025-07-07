@@ -48,7 +48,7 @@ const CartSummary = () => {
           </div>
 
           {/* <!-- Métodos de pago --> */}
-          {/* TODO: Corregir método active */}
+          {/* TODO: Oculto. Corregir método active */}
           <div className="d-none">
             <h6 className="mb-3">Métodos de pago</h6>
             <div className="row row-cols-2 g-2 mb-4">
@@ -87,7 +87,6 @@ const CartSummary = () => {
             </div>
           </div>
 
-          {/* TODO: IMPORTANTE: Implementar checkout con escritura a firebase */}
           <Link to="/checkout" className="btn btn-warning w-100 py-2 mb-2">
             Finalizar compra
           </Link>
@@ -96,9 +95,9 @@ const CartSummary = () => {
             <small className="text-muted">
               Al finalizar aceptas nuestros{" "}
               {/* TODO: Quitar link si no funciona */}
-              <a href="#" className="text-decoration-none">
+              <div className="text-decoration-none">
                 términos y condiciones
-              </a>
+              </div>
             </small>
           </div>
         </div>
