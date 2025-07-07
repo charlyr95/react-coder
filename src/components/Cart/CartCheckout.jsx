@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { createOrder } from "../../service/firebase";
 import { useForm } from 'react-hook-form'
+import { Link } from "react-router-dom";
 
 const CartCheckout = () => {
     const [orderId, setOrderId] = useState(null);
@@ -9,6 +10,12 @@ const CartCheckout = () => {
     const { cart = [], cartTotal = 0, clearCart = () => { } } = useContext(CartContext);
 
     const submitCheckout = async (data) => {
+        // Validate cart has items
+        if (!cart || cart.length === 0) {
+            console.error("Cannot proceed with checkout: Cart is empty");
+            return;
+        }
+
         const order = {
             buyer: {
                 name: data.name,
@@ -47,6 +54,17 @@ const CartCheckout = () => {
                                         <h4 className="alert-heading">¡Orden Confirmada!</h4>
                                         <p className="mb-0">Tu ID de orden es: <strong>{orderId}</strong></p>
                                     </div>
+                                ) : cart.length === 0 ? (
+                                    <div className="alert alert-warning text-center">
+                                        <h4 className="alert-heading">Carrito vacío</h4>
+                                        <p className="mb-3">No hay productos en tu carrito. Agrega algunos productos antes de proceder con el checkout.</p>
+                                        <Link
+                                            className="btn btn-warning px-4 py-2 rounded-pill shadow-sm fw-bold"
+                                            to="/tienda"
+                                        >
+                                            Visitar tienda
+                                        </Link>
+                                    </div>
                                 ) : (
                                     <form onSubmit={handleSubmit(submitCheckout)}>
                                         <div className="row">
@@ -57,7 +75,7 @@ const CartCheckout = () => {
                                                     id="name"
                                                     className={`form-control ${errors.name ? 'is-invalid' : ''}`}
                                                     placeholder="Ingresa tu nombre"
-                                                    {...register("name", { 
+                                                    {...register("name", {
                                                         required: "Nombre es requerido",
                                                         validate: value => value.trim() !== '' || "Nombre no puede estar vacío o ser solo espacios",
                                                         maxLength: {
@@ -75,7 +93,7 @@ const CartCheckout = () => {
                                                     id="lastname"
                                                     className={`form-control ${errors.lastname ? 'is-invalid' : ''}`}
                                                     placeholder="Ingresa tu apellido"
-                                                    {...register("lastname", { 
+                                                    {...register("lastname", {
                                                         required: "Apellido es requerido",
                                                         validate: value => value.trim() !== '' || "Apellido no puede estar vacío o ser solo espacios",
                                                         maxLength: {
@@ -95,7 +113,7 @@ const CartCheckout = () => {
                                                 id="phone"
                                                 className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
                                                 placeholder="Ingresa tu número de teléfono"
-                                                {...register("phone", { 
+                                                {...register("phone", {
                                                     required: "Teléfono es requerido",
                                                     validate: value => value.trim() !== '' || "Teléfono no puede estar vacío o ser solo espacios",
                                                     pattern: {
@@ -118,7 +136,7 @@ const CartCheckout = () => {
                                                 id="address"
                                                 className={`form-control ${errors.address ? 'is-invalid' : ''}`}
                                                 placeholder="Ingresa tu dirección"
-                                                {...register("address", { 
+                                                {...register("address", {
                                                     required: "Dirección es requerida",
                                                     validate: value => value.trim() !== '' || "Dirección no puede estar vacío o ser solo espacios",
                                                     maxLength: {
