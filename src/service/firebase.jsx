@@ -5,24 +5,14 @@ import { collection, doc, addDoc, getDoc, getFirestore } from "firebase/firestor
 import { getDocs, query, where } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCOcIl5PhAFbcrl6R4_TcFblcR2u5BXAeE",
-    authDomain: "react-coder-9ce68.firebaseapp.com",
-    projectId: "react-coder-9ce68",
-    storageBucket: "react-coder-9ce68.firebasestorage.app",
-    messagingSenderId: "391802802583",
-    appId: "1:391802802583:web:e28b3c0bc5e579c35574d2",
-    measurementId: "G-QMFM5RLCZQ"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
-
-// const firebaseConfig = {
-//   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-//   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-//   projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-//   storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-//   messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-//   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-//   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
-// };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
