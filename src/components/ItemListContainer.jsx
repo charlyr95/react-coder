@@ -5,7 +5,7 @@ import ItemList from "./ItemList"
 import Loading from "./Loading"
 import ErrorMessage from "./ErrorMessage"
 
-const ItemListContainer = (props) => {
+const ItemListContainer = ({ titulo }) => {
   const [data, setData] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -32,13 +32,13 @@ const ItemListContainer = (props) => {
     const filters = []
     if (category) { filters.push({ field: "category", value: category }) }
     if (gender) { filters.push({ field: "gender", value: gender }) }
-    fetchProducts( filters)
+    fetchProducts(filters)
   }, [category, gender])
 
   return (
     <div>
       <div className="mt-5">&nbsp;</div>
-      <h1 className="text-center">{props.titulo}</h1>
+      <h1 className="text-center">{titulo}</h1>
 
       <div className="container">
         {isLoading ? (

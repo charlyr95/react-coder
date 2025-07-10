@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom'
 
-const Item = ({ prod }) => {
+const Item = ({ product }) => {
     const {
         id = "",
         title = "",
@@ -9,7 +9,7 @@ const Item = ({ prod }) => {
         installments_quantity = 0,
         main_image = "",
         hover_image = "",
-    } = prod;
+    } = product;
 
     return (
         <div className="col product-item z-1" data-aos="flip-right">
