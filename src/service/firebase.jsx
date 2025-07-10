@@ -63,6 +63,25 @@ const getProducts = async (filters) => {
     return queryCollection("products", filters);
 };
 
+// Private function to get all items from a collection
+const getCollection = async (collectionName) => {
+    try {
+        const collectionRef = collection(db, collectionName);
+        const querySnapshot = await getDocs(collectionRef);
+        const items = [];
+        querySnapshot.forEach((doc) => {
+            items.push({ id: doc.id, ...doc.data() });
+        });
+        if (items.length === 0) {
+            throw new Error(`Firebase error: no items found in ${collectionName}`);
+        }
+        return items;
+    } catch (error) {
+        throw error;
+    }
+};
+
+// Private function to query a collection with filters
 const queryCollection = async (collectionName, filters) => {
     try {
         const collectionRef = collection(db, collectionName);
@@ -75,23 +94,6 @@ const queryCollection = async (collectionName, filters) => {
         });
         if (items.length === 0) {
             throw new Error(`Firebase error: no items found in ${collectionName} for filters: ${JSON.stringify(filters)}`);
-        }
-        return items;
-    } catch (error) {
-        throw error;
-    }
-};
-
-const getCollection = async (collectionName) => {
-    try {
-        const collectionRef = collection(db, collectionName);
-        const querySnapshot = await getDocs(collectionRef);
-        const items = [];
-        querySnapshot.forEach((doc) => {
-            items.push({ id: doc.id, ...doc.data() });
-        });
-        if (items.length === 0) {
-            throw new Error(`Firebase error: no items found in ${collectionName}`);
         }
         return items;
     } catch (error) {
