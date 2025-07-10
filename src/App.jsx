@@ -1,5 +1,4 @@
 // library imports
-import React, { useContext } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify'
 
@@ -22,7 +21,8 @@ import CartCheckout from './components/Cart/CartCheckout';
 import { CartProvider } from './context/CartContext';
 
 // pages
-import Cart from './pages/Cart';
+import CartPage from './components/Cart/CartPage';
+import LandingPage from './components/Landing/LandingPage';
 
 
 function App() {
@@ -31,12 +31,12 @@ function App() {
       <CartProvider>
         <NavigationBar />
         <Routes>
-          <Route path='/' element={<ItemListContainer titulo='Todos los productos' />} />
+          <Route path='/' element={<LandingPage />} />
           <Route path='/tienda' element={<ItemListContainer titulo='Todos los productos' />} />
           <Route path='/category/:category' element={<ItemListContainer titulo='Productos por categoría' />} />
           <Route path='/gender/:gender' element={<ItemListContainer titulo='Productos por género' />} />
           <Route path='/product/:id' element={<ItemDetailContainer />} />
-          <Route path='/cart' element={<Cart />} />
+          <Route path='/cart' element={<CartPage />} />
           {/* TODO: 1.1 Crear páginas para las otras secciones o modificar header */}
           <Route path='/comunidad' element={<EnConstruccion />} />
           <Route path='/nosotros' element={<EnConstruccion />} />
