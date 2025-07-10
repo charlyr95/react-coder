@@ -3,7 +3,7 @@
 
 import { initializeApp } from "firebase/app";
 import { collection, doc, addDoc, getDoc, getFirestore } from "firebase/firestore";
-import { getDocs, query, where } from "firebase/firestore";
+import { getDocs, query, where, orderBy, limit } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -99,5 +99,24 @@ const getCollection = async (collectionName) => {
     }
 };
 
+const getTopProducts = async (limitCount = 10) => {
+    try {
+        const productsCollection = collection(db, "products");
+        const q = query(
+            productsCollection,
+            orderBy("sell_count", "desc"),
+            limit(limitCount)
+        );
+        const querySnapshot = await getDocs(q);
+        const items = [];
+        querySnapshot.forEach((doc) => {
+            items.push({ id: doc.id, ...doc.data() });
+        });
+        return items;
+    } catch (error) {
+        throw error;
+    }
+};
 
-export { createOrder, getProducts, getOneProduct, createProduct };
+
+export { createOrder, getProducts, getOneProduct, createProduct, getTopProducts };
