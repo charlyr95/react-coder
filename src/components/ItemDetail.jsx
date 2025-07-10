@@ -23,7 +23,7 @@ const ItemDetail = ({ product }) => {
   }
 
   return (
-    <div className="container">
+    <div className="container my-5">
       <div className="row">
         <div className="col-md-6">
           <div className="card card-image-container position-relative overflow-hidden">
