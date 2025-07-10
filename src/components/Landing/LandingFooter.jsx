@@ -1,6 +1,6 @@
 const LandingFooter = () => {
     return (
-        <footer className="bg-dark text-white text-center py-5">
+        <footer className="footer mt-auto py-3 bg-body-tertiary text-center">
             <div className="container">
                 <p className="mb-0">© 2025 KinetiX Sports. Todos los derechos reservados.</p>
                 <p className="mb-0">Av. 9 de Julio 200, Buenos Aires, Argentina.</p>
