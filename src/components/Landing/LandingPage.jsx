@@ -1,10 +1,10 @@
+import SocialMedia from "./SocialMedia";
 import LandingHero from "./LandingHero";
 import StickyBanner from "./StickyBanner";
 import HeroCarousel from "./HeroCarousel";
+import MailingBanner from "./MailingBanner";
 import CategoryShowcase from "./CategoryShowcase";
-import SocialMedia from "./SocialMedia";
 import PopularItems from "./PopularItems";
-import ItemListContainer from "../ItemListContainer"; 
 
 const LandingPage = () => {
   return (
@@ -13,6 +13,7 @@ const LandingPage = () => {
       <LandingHero />
       <StickyBanner />
       <HeroCarousel />
+      <MailingBanner />
       <CategoryShowcase />
       <PopularItems titulo="Productos populares" />
     </>
