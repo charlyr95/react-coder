@@ -5,6 +5,7 @@ import HeroCarousel from "./HeroCarousel";
 import MailingBanner from "./MailingBanner";
 import CategoryShowcase from "./CategoryShowcase";
 import PopularItems from "./PopularItems";
+import LandingFooter from "./LandingFooter";
 
 const LandingPage = () => {
   return (
@@ -16,6 +17,7 @@ const LandingPage = () => {
       <MailingBanner />
       <CategoryShowcase />
       <PopularItems titulo="Productos populares" />
+      <LandingFooter />
     </>
   );
 }
