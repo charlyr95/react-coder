@@ -93,7 +93,6 @@ const CartSummary = () => {
           <div className="text-center">
             <small className="text-muted">
               Al finalizar aceptas nuestros{" "}
-              {/* TODO: Quitar link si no funciona */}
               <div className="text-decoration-none">
                 términos y condiciones
               </div>

@@ -1,3 +1,4 @@
+// TODO: Mailing con firebase, agregar serverTimestamp y geolocation con API
 const MailingBanner = () => {
     return (
         <section className="py-3 bg-warning text-center container-fluid d-flex justify-content-center align-content-center text-dark flex-column gap-0" style={{ fontSize: "0.8rem !important" }}>

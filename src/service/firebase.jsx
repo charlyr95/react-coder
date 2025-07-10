@@ -4,6 +4,7 @@
 import { initializeApp } from "firebase/app";
 import { collection, doc, addDoc, getDoc, getFirestore } from "firebase/firestore";
 import { getDocs, query, where, orderBy, limit } from "firebase/firestore";
+import { serverTimestamp } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -33,7 +34,7 @@ const getOneProduct = async (productId) => {
 };
 
 const createOrder = async (orderData) => {
-    // TODO: Add datimetime from firebase server to order data ussing spread operator
+    orderData = { ...orderData, datetime: serverTimestamp() };
     try {
         const ordersCollection = collection(db, "orders");
         const orderDoc = await addDoc(ordersCollection, orderData);
