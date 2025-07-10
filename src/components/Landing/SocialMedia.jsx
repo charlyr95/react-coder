@@ -2,7 +2,7 @@
 const SocialMedia = () => {
     return (
         <div className="d-none d-md-block position-fixed top-50 end-0 mx-2 translate-middle-y z-3 " role="navigation" aria-label="Redes sociales">
-            <div className="d-flex flex-column align-items-center bg-dark-subtle bg-opacity-75 py-2 px-2 rounded-pill">
+            <div className="d-flex flex-column align-items-center bg-dark-subtle bg-opacity-75 py-2 px-2 rounded-pill shadow border">
                 <a href="#" className="link-body-emphasis mb-2" aria-label="Facebook">
                     <i className="bi bi-facebook fs-4" aria-hidden="true"></i>
                 </a>

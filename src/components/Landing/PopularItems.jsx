@@ -3,6 +3,7 @@ import { getTopProducts } from "../../service/firebase"
 import ItemList from "../ItemList"
 import Loading from "../Loading"
 import ErrorMessage from "../ErrorMessage"
+import { Link } from "react-router-dom"
 
 const PopularItems = (props) => {
     const [data, setData] = useState([])
@@ -30,7 +31,7 @@ const PopularItems = (props) => {
     }, [])
 
     return (
-        <div className="bg-body-tertiary pt-5 border-top">
+        <div className="bg-dark-subtle pt-5 border-top">
             <h1 className="text-center text-uppercase fs-2">{props.titulo}</h1>
 
             <div className="container">
@@ -41,7 +42,10 @@ const PopularItems = (props) => {
                 ) : (
                     <div className="row">
                         <ItemList className="col-12 col-lg-10 mb-5" data={data} />
-                        <div className="mb-5">&nbsp;</div>
+                        <div className="my-5">&nbsp;</div>
+                        <div className="d-flex w-100 justify-content-center mb-5">
+                            <Link className="btn btn-warning shadow-sm text-uppercase text-dark" role="button" to="/tienda">Ver todos los productos</Link>
+                        </div>
                     </div>
                 )}
             </div>
