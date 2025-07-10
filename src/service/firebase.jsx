@@ -1,6 +1,3 @@
-/* eslint-disable no-useless-catch */
-
-
 import { initializeApp } from "firebase/app";
 import { collection, doc, addDoc, getDoc, getFirestore } from "firebase/firestore";
 import { getDocs, query, where, orderBy, limit } from "firebase/firestore";
