@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-catch */
 
 
 import { initializeApp } from "firebase/app";
@@ -73,7 +74,7 @@ const queryCollection = async (collectionName, filters) => {
             items.push({ id: doc.id, ...doc.data() });
         });
         if (items.length === 0) {
-            throw new Error(`Firebase error: no items found in ${collectionName} for ${field} === ${value}`);
+            throw new Error(`Firebase error: no items found in ${collectionName} for filters: ${JSON.stringify(filters)}`);
         }
         return items;
     } catch (error) {
@@ -99,4 +100,4 @@ const getCollection = async (collectionName) => {
 };
 
 
-export { createOrder, getProducts, getOneProduct };
+export { createOrder, getProducts, getOneProduct, createProduct };
