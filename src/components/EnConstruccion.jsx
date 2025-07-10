@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 const EnConstruccion = () => {
@@ -23,5 +22,3 @@ const EnConstruccion = () => {
 }
 
 export default EnConstruccion;
-// This component displays a message indicating that the page is under construction.
-// It includes a button to navigate back to the home page.

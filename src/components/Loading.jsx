@@ -1,4 +1,3 @@
-// TODO: 2.1 Cambiar nombre componente de TypeScript a JavaScript pero revisar dependencias
 const Loading = ({ mensaje = "Cargando..." }) => {
     return (
         <div className="d-flex justify-content-center align-items-center" style={{ minHeight: "80vh" }}>

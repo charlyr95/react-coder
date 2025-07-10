@@ -2,8 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const CartItem = ({ product, removeFromCart }) => {
-  // destructuring product properties and providing default values
-  // to avoid errors if any property is missing
+  
   const {
     id = "",
     title = "",

@@ -48,7 +48,6 @@ const CartSummary = () => {
           </div>
 
           {/* <!-- Métodos de pago --> */}
-          {/* TODO: Oculto. Corregir método active */}
           <div className="d-none">
             <h6 className="mb-3">Métodos de pago</h6>
             <div className="row row-cols-2 g-2 mb-4">

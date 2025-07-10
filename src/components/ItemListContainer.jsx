@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react"
-// import { getProducts } from "../mock/AyncMock"
 import { useParams } from "react-router-dom"
 import { getProducts } from "../service/firebase"
-
 import ItemList from "./ItemList"
 import Loading from "./Loading"
 import ErrorMessage from "./ErrorMessage"

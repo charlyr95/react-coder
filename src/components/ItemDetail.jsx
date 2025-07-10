@@ -1,4 +1,3 @@
-import React from 'react'
 import ItemCount from './ItemCount';
 import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
@@ -7,7 +6,6 @@ const ItemDetail = ({ product }) => {
   
   // Desestructuración del objeto product
   const {
-    id = "",
     title = "",
     vendor = "",
     description = "",
@@ -18,7 +16,7 @@ const ItemDetail = ({ product }) => {
     quantity_in_stock = 0,
   } = product;
 
-  const { cart, addToCart } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
 
   const onAdd = (cantidad) => {
     addToCart(product, cantidad);

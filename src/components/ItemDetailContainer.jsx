@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getOneProduct } from '../service/firebase'
 import Loading from './Loading'
@@ -11,7 +11,6 @@ const ItemDetailContainer = () => {
   const [error, setError] = useState(null)
   const { id } = useParams()
 
-  // TODO: IMPORTANTE: Cambiar fetch por el de firebase
   const fetchProduct = () => {
     setIsLoading(true)
     setError(null)

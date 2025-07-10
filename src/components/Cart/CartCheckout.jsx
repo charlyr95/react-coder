@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { createOrder } from "../../service/firebase";
 import { useForm } from 'react-hook-form'
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const CartCheckout = () => {
     const [orderId, setOrderId] = useState(null);
-    const { register, handleSubmit, formState: { errors }, getValues } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const { cart = [], cartTotal = 0, clearCart = () => { } } = useContext(CartContext);
 
     const submitCheckout = async (data) => {
@@ -117,7 +117,7 @@ const CartCheckout = () => {
                                                     required: "Teléfono es requerido",
                                                     validate: value => value.trim() !== '' || "Teléfono no puede estar vacío o ser solo espacios",
                                                     pattern: {
-                                                        value: /^[0-9\s\-\+]+$/,
+                                                        value: /^[0-9\s\-+]+$/,
                                                         message: "Teléfono no puede contener letras ni caracteres especiales"
                                                     },
                                                     maxLength: {

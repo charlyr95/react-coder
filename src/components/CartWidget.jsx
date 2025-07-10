@@ -1,8 +1,8 @@
-import React, {useContext} from 'react';
+import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 
 const CartWidget = () => {
-  const { cart, cartCount } = useContext(CartContext);
+  const { cartCount } = useContext(CartContext);
 
   return (
     <button id="shoppingCartBtn" className="btn btn-outline-light position-relative" type="button" aria-label="Carrito de compras">

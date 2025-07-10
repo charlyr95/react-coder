@@ -23,7 +23,7 @@ const NavigationBar = () => {
         <div className="order-lg-last d-flex gap-2 flex-nowrap ms-lg-3">
           {/* TODO: 3.2 Eliminar botón de login o implementar login con firebase */}
           <button
-            className="btn btn-outline-light"
+            className="btn btn-outline-light d-none"
             type="button"
             aria-label="Cuenta de usuario"
           >
@@ -51,7 +51,7 @@ const NavigationBar = () => {
             </Nav.Link>
             <NavDropdown title="Tienda" id="dropdownTienda" menuVariant="dark">
               <NavDropdown.Item as={Link} to="/tienda">
-                Explorar
+                Todos los productos
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item as={Link} to="/gender/male">
