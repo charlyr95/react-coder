@@ -6,7 +6,7 @@ const AboutHero = () => {
                     <div className="col-12">
                         {/* Hero Title */}
                         <div className="text-center mb-5">
-                            <h1 className="display-4 fw-bold mb-3">Acerca de Kinetix Sports</h1>
+                            <h1 className="display-4 fw-bold mb-3">Acerca de KinetiX Sports</h1>
                             <p className="lead text-muted">Descubre nuestra historia y nuestro compromiso con el deporte</p>
                             <hr className="w-25 mx-auto border-primary border-3" />
                         </div>
