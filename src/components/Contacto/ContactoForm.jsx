@@ -1,4 +1,10 @@
 const ContactoForm = () => {
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // Aquí puedes manejar el envío del formulario
+    };
+
     return (
         <div className="container py-5">
             <div className="row justify-content-center">
@@ -9,7 +15,6 @@ const ContactoForm = () => {
                             <div className="mb-3">
                                 <i className="bi bi-envelope-heart fs-1"></i>
                             </div>
-                            <h3 className="mb-2">¡Contáctanos!</h3>
                             <p className="mb-0 opacity-75">Estamos aquí para ayudarte</p>
                         </div>
 
@@ -28,7 +33,7 @@ const ContactoForm = () => {
                                 </a>
                             </div>
 
-                            <form action="submit-form.php" method="post">
+                            <form onSubmit={handleSubmit}>
                                 <div className="row">
                                     <div className="col-md-6 mb-3">
                                         <label htmlFor="name" className="form-label fw-semibold">
@@ -40,9 +45,10 @@ const ContactoForm = () => {
                                             id="name"
                                             name="name"
                                             className="form-control form-control-lg"
-                                            placeholder="Escribe tu nombre completo"
+                                            placeholder="Juan Pérez"
+                                            style={{ fontSize: '1rem' }}
                                             required
-                                        />
+                                            />
                                     </div>
                                     <div className="col-md-6 mb-3">
                                         <label htmlFor="phone" className="form-label fw-semibold">
@@ -54,8 +60,9 @@ const ContactoForm = () => {
                                             id="phone"
                                             name="phone"
                                             className="form-control form-control-lg"
+                                            style={{ fontSize: '1rem' }}
                                             placeholder="011-765-1284"
-                                        />
+                                            />
                                     </div>
                                 </div>
 
@@ -70,8 +77,9 @@ const ContactoForm = () => {
                                         name="email"
                                         className="form-control form-control-lg"
                                         placeholder="ejemplo@correo.com"
+                                        style={{ fontSize: '1rem' }}
                                         required
-                                    />
+                                        />
                                 </div>
 
                                 <div className="mb-3">
@@ -79,7 +87,7 @@ const ContactoForm = () => {
                                         <i className="bi bi-tag me-2 text-primary"></i>
                                         Asunto
                                     </label>
-                                    <select id="subject" name="subject" className="form-select form-select-lg" required>
+                                    <select id="subject" name="subject" className="form-select form-select-lg" required style={{ fontSize: '1rem' }}>
                                         <option value="">Selecciona un asunto</option>
                                         <option value="consulta-producto">Consulta sobre producto</option>
                                         <option value="soporte-tecnico">Soporte técnico</option>
@@ -106,7 +114,7 @@ const ContactoForm = () => {
                                 </div>
 
                                 <div className="d-grid gap-2">
-                                    <button type="submit" className="btn btn-warning btn-lg py-3">
+                                    <button type="submit" className="btn btn-warning btn-lg py-3" >
                                         <i className="bi bi-send me-2"></i>
                                         Enviar Mensaje
                                     </button>
@@ -118,7 +126,7 @@ const ContactoForm = () => {
                         </div>
 
                         {/* Footer Section */}
-                        <div className="card-footer bg-light text-center py-4 border-0">
+                        <div className="card-footer bg-light text-center py-4 border-0 d-none">
                             <div className="row text-center">
                                 <div className="col-md-4 mb-3 mb-md-0">
                                     <div className="d-flex flex-column align-items-center">
