@@ -211,7 +211,7 @@ const ComunidadPage = () => {
 
                             {/* Load More Section */}
                             <div className="text-center mt-5">
-                                <button className="btn btn-primary btn-lg px-5">
+                                <button className="btn btn-outline-dark btn-lg px-5">
                                     <i className="bi bi-arrow-down-circle me-2"></i>
                                     Cargar Más Posts
                                 </button>
