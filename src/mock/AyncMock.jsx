@@ -595,13 +595,14 @@ export const getOneProduct = (id) => {
       if (isError()) {
         reject('Hubo un error al buscar el producto')
       } else {
-        let product = products.find((prod) => prod.product_id === id)
-        resolve(product)
+        const product = products.find((prod) => prod.product_id === id)
+        if (!product) reject('Producto no encontrado')
+        else resolve(product)
       }
     }, Math.random() * 900 + 100)  // Simulate a delay between 0.1 and 1 second
   })
 }
 
 const isError = () => {
-  return Math.random() < 0.1;
+  return Math.random() < 0.0;
 }

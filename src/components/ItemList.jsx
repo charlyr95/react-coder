@@ -4,8 +4,8 @@ import Item from './Item'
 
 const ItemList = ({data}) => {
   return (
-    <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 mb-5">
-        {data.map((prod)=> <Item key={prod.product_id} prod={prod}/>)}
+    <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 m-0">
+        {data.map((product)=> <Item key={product.id} product={product}/>)}
     </div>
   )
 }

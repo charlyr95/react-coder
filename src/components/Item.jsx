@@ -1,17 +1,15 @@
-import React from 'react'
 import {Link} from 'react-router-dom'
 
-
-const Item = ({ prod }) => {
+const Item = ({ product }) => {
     const {
-        title,
-        vendor,
-        price,
-        installments_quantity,
-        main_image,
-        hover_image,
-        product_id,
-    } = prod;
+        id = "",
+        title = "",
+        vendor = "",
+        price = 0,
+        installments_quantity = 0,
+        main_image = "",
+        hover_image = "",
+    } = product;
 
     return (
         <div className="col product-item z-1" data-aos="flip-right">
@@ -66,7 +64,7 @@ const Item = ({ prod }) => {
                         <div className="buy-button bg-body-tertiary top-0 z-2">
                             <div className="p-4 pt-1 z-2">
                                 <Link
-                                    to={`/product/${product_id}`}
+                                    to={`/product/${id}`}
                                     className="btn btn-warning w-100 z-5"
                                     role="button"
                                 >

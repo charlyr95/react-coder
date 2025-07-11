@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from 'react'
-import { getOneProduct } from '../mock/AyncMock'
-import ItemDetail from './ItemDetail'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { getOneProduct } from '../service/firebase'
 import Loading from './Loading'
+import ItemDetail from './ItemDetail'
 import ErrorMessage from './ErrorMessage'
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({})
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
-  const { product_id } = useParams()
+  const { id } = useParams()
 
   const fetchProduct = () => {
     setIsLoading(true)
     setError(null)
 
-    getOneProduct(product_id)
+    getOneProduct(id)
       .then((res) => setProduct(res))
       .catch(() => setError("No se pudo cargar el producto."))
       .finally(() => setIsLoading(false))
@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     fetchProduct()
-  }, [product_id])
+  }, [id])
 
   return (
     <>

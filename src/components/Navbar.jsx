@@ -1,9 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import CartWidget from "./CartWidget";
-import { Button } from "react-bootstrap";
 
 const NavigationBar = () => {
   return (
@@ -22,8 +21,9 @@ const NavigationBar = () => {
           Kineti<span className="text-warning">X Sports</span>
         </Navbar.Brand>
         <div className="order-lg-last d-flex gap-2 flex-nowrap ms-lg-3">
+          {/* TODO: 3.2 Eliminar botón de login o implementar login con firebase */}
           <button
-            className="btn btn-outline-light"
+            className="btn btn-outline-light d-none"
             type="button"
             aria-label="Cuenta de usuario"
           >
@@ -36,14 +36,14 @@ const NavigationBar = () => {
             <i className="bi bi-list"></i>
           </button>
         </div>
-        <Navbar.Collapse id="navbarCollapse" >
+        <Navbar.Collapse id="navbarCollapse">
           <Nav className="ms-xl-auto me-auto me-xl-auto mb-2 mb-lg-0 d-flex gap-xl-4">
             <Nav.Link as={NavLink} to="/" end>
               Inicio
             </Nav.Link>
             <NavDropdown title="Tienda" id="dropdownTienda" menuVariant="dark">
               <NavDropdown.Item as={Link} to="/tienda">
-                Explorar
+                Todos los productos
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item as={Link} to="/gender/male">
@@ -63,18 +63,25 @@ const NavigationBar = () => {
                 Indumentaria
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link as={Link} to="/comunidad">
+            <Nav.Link as={Link} to="/comunidad" className="d-none">
               Comunidad
             </Nav.Link>
-            <Nav.Link as={Link} to="/nosotros">
+            <Nav.Link as={Link} to="/nosotros" className="d-none">
               Nosotros
             </Nav.Link>
-            <Nav.Link as={Link} to="/contacto">
+            <Nav.Link as={Link} to="/contacto" className="d-none">
               Contacto
             </Nav.Link>
-            <div className="d-lg-none position-absolute w-100 start-0 bg-transparent vh-100 m-0 p-0 top-100" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true"></div>
+            <div
+              className="d-lg-none position-absolute w-100 start-0 bg-transparent vh-100 m-0 p-0 top-100"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarCollapse"
+              aria-controls="navbarCollapse"
+              aria-expanded="true"
+            ></div>
           </Nav>
-          <form className="d-flex" role="search">
+          {/* TODO: 3.1 Revisar implementación de búsqueda, recarga aplicación. Corregir o eliminar */}
+          <form className="d-flex d-none" role="search">
             <input
               className="form-control me-2"
               type="search"
@@ -85,7 +92,6 @@ const NavigationBar = () => {
               Buscar
             </button>
           </form>
-          
         </Navbar.Collapse>
       </div>
     </Navbar>
@@ -93,4 +99,3 @@ const NavigationBar = () => {
 };
 
 export default NavigationBar;
-

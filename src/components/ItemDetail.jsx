@@ -1,7 +1,9 @@
-import React from 'react'
 import ItemCount from './ItemCount';
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
 
 const ItemDetail = ({ product }) => {
+  
   // Desestructuración del objeto product
   const {
     title = "",
@@ -11,16 +13,17 @@ const ItemDetail = ({ product }) => {
     installments_quantity = 0,
     main_image = "",
     hover_image = "",
-    product_id = "",
     quantity_in_stock = 0,
   } = product;
 
+  const { addToCart } = useContext(CartContext);
+
   const onAdd = (cantidad) => {
-    alert(`Agregaste al carrito:\n${title}\n${cantidad > 1 ? `${cantidad} unidades` : `${cantidad} unidad`}`);
+    addToCart(product, cantidad);
   }
 
   return (
-    <div className="container">
+    <div className="container my-5">
       <div className="row">
         <div className="col-md-6">
           <div className="card card-image-container position-relative overflow-hidden">

@@ -1,32 +1,24 @@
 import { useEffect, useState } from "react"
-import { getProducts } from "../mock/AyncMock"
 import { useParams } from "react-router-dom"
+import { getProducts } from "../service/firebase"
 import ItemList from "./ItemList"
-
-
 import Loading from "./Loading"
 import ErrorMessage from "./ErrorMessage"
 
-const ItemListContainer = (props) => {
+const ItemListContainer = ({ titulo }) => {
   const [data, setData] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
   const { category } = useParams()
   const { gender } = useParams()
 
-  const fetchProducts = () => {
+  const fetchProducts = async (filters) => {
     setIsLoading(true)
     setError(null)
 
-    getProducts()
+    await getProducts(filters)
       .then((respuesta) => {
-        if (category) {
-          setData(respuesta.filter((prod) => prod.category === category))
-        } else if (gender) {
-          setData(respuesta.filter((prod) => prod.gender === gender))
-        } else {
-          setData(respuesta)
-        }
+        setData(respuesta)
       })
       .catch(() => {
         setError("Hubo un problema al cargar los productos.")
@@ -37,13 +29,16 @@ const ItemListContainer = (props) => {
   }
 
   useEffect(() => {
-    fetchProducts()
+    const filters = []
+    if (category) { filters.push({ field: "category", value: category }) }
+    if (gender) { filters.push({ field: "gender", value: gender }) }
+    fetchProducts(filters)
   }, [category, gender])
 
   return (
     <div>
       <div className="mt-5">&nbsp;</div>
-      <h1 className="text-center">{props.titulo}</h1>
+      <h1 className="text-center">{titulo}</h1>
 
       <div className="container">
         {isLoading ? (
