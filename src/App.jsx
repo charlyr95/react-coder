@@ -25,6 +25,7 @@ import CartPage from './components/Cart/CartPage';
 import LandingPage from './components/Landing/LandingPage';
 import ComunidadPage from './components/Comunidad/ComunidadPage';
 import NosotrosPage from './components/Nosotros/NosotrosPage';
+import ContactoPage from './components/Contacto/ContactoPage';
 
 function App() {
   return (
@@ -41,7 +42,7 @@ function App() {
           {/* TODO: 1.1 Crear páginas para las otras secciones o modificar header */}
           <Route path='/comunidad' element={<ComunidadPage />} />
           <Route path='/nosotros' element={<NosotrosPage />} />
-          <Route path='/contacto' element={<EnConstruccion />} />
+          <Route path='/contacto' element={<ContactoPage />} />
           <Route path='/checkout' element={<CartCheckout />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
