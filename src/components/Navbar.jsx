@@ -74,7 +74,7 @@ const NavigationBar = () => {
             <Nav.Link as={Link} to="/comunidad">
               Comunidad
             </Nav.Link>
-            <Nav.Link as={Link} to="/nosotros" className="d-none">
+            <Nav.Link as={Link} to="/nosotros">
               Nosotros
             </Nav.Link>
             <Nav.Link as={Link} to="/contacto" className="d-none">
