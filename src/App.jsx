@@ -23,6 +23,7 @@ import { CartProvider } from './context/CartContext';
 // pages
 import CartPage from './components/Cart/CartPage';
 import LandingPage from './components/Landing/LandingPage';
+import ComunidadPage from './components/Comunidad/ComunidadPage';
 
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
           <Route path='/product/:id' element={<ItemDetailContainer />} />
           <Route path='/cart' element={<CartPage />} />
           {/* TODO: 1.1 Crear páginas para las otras secciones o modificar header */}
-          <Route path='/comunidad' element={<EnConstruccion />} />
+          <Route path='/comunidad' element={<ComunidadPage />} />
           <Route path='/nosotros' element={<EnConstruccion />} />
           <Route path='/contacto' element={<EnConstruccion />} />
           <Route path='/checkout' element={<CartCheckout />} />

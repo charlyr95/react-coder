@@ -71,7 +71,7 @@ const NavigationBar = () => {
                 Indumentaria
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link as={Link} to="/comunidad" className="d-none">
+            <Nav.Link as={Link} to="/comunidad">
               Comunidad
             </Nav.Link>
             <Nav.Link as={Link} to="/nosotros" className="d-none">
