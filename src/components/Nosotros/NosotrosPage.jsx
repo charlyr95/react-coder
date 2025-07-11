@@ -71,7 +71,7 @@ const NosotrosPage = () => {
 
     return (
         <main className="">
-            <div className="mt-3">&nbsp;</div>
+            <div className="mt-4">&nbsp;</div>
 
             <AboutHero />
 
