@@ -54,6 +54,18 @@ const createProduct = async (productData) => {
     }
 };
 
+const createMailing = async (email) => {
+    try {
+        const mailingData = { email, datetime: serverTimestamp() };
+        const mailingsCollection = collection(db, "mailings");
+        const mailingDoc = await addDoc(mailingsCollection, mailingData);
+        console.log("Mailing created with ID: ", mailingDoc.id);
+        return mailingDoc.id;
+    } catch (error) {
+        throw error;
+    }
+};
+
 const getProducts = async (filters) => {
     if (!filters || filters.length === 0) {
         return getCollection("products");
@@ -119,4 +131,4 @@ const getTopProducts = async (limitCount = 10) => {
 };
 
 
-export { createOrder, getProducts, getOneProduct, createProduct, getTopProducts };
+export { createOrder, getProducts, getOneProduct, getTopProducts, createProduct, createMailing };

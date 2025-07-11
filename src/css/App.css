@@ -306,4 +306,10 @@ header .dropdown-menu {
   }
 }
 
+.text-prose {
+  max-width: 65ch;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
 /*# sourceMappingURL=styles.css.map */
