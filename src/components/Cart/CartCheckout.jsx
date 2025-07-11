@@ -46,12 +46,16 @@ const CartCheckout = () => {
                     <div className="col-md-8 col-lg-6">
                         <div className="card shadow">
                             <div className="card-header bg-body text-center">
-                                <h2 className="card-title mb-0">Completa tus datos</h2>
+                                {!orderId ? (
+                                    <h2 className="card-title mb-0">Completa tus datos</h2>
+                                ) : (
+                                    <h2 className="card-title mb-0">¡Felicidades!</h2>
+                                )}
                             </div>
                             <div className="card-body">
                                 {orderId ? (
                                     <div className="alert alert-success text-center">
-                                        <h4 className="alert-heading">¡Orden Confirmada!</h4>
+                                        <h4 className="alert-heading">Orden Confirmada</h4>
                                         <p className="mb-0">Tu ID de orden es: <strong>{orderId}</strong></p>
                                     </div>
                                 ) : cart.length === 0 ? (
