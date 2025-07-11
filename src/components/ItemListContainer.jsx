@@ -40,7 +40,7 @@ const ItemListContainer = ({ titulo }) => {
       <div className="mt-5">&nbsp;</div>
       <h1 className="text-center">{titulo}</h1>
 
-      <div className="container">
+      <div className="container mb-5">
         {isLoading ? (
           <Loading mensaje="Cargando productos..." />
         ) : error ? (
@@ -51,6 +51,7 @@ const ItemListContainer = ({ titulo }) => {
           </div>
         )}
       </div>
+      <div className="my-5">&nbsp;</div>
     </div>
   )
 }
